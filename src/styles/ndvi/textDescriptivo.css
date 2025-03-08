@@ -1,0 +1,48 @@
+/* Contenedor del texto */
+.text-containerNdvi {
+  margin-bottom: 18px;
+  font-family: 'Calibri', sans-serif; 
+  color: #333; /* Verde oscuro para el texto */
+  font-size: 0.9em;
+  background-color: #e8f7d6; /* Fondo suave y claro, inspirado en el NDVI */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Título del texto */
+.text-title {
+  font-size: 1.3em; 
+  font-weight: bold;
+  color: #2c3e50; /* Verde brillante para los títulos */
+  margin-bottom: 10px;
+}
+
+/* Descripción del texto */
+.text-description {
+  font-size: 1em;
+  color: #555; /* Gris para descripciones */
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Justificación de texto en párrafos */
+.text-containerNdvi p {
+  text-align: justify;
+}
+
+/* Centrando el título */
+.text-containerNdvi h2 {
+  text-align: center;
+}
+
+/* Efecto de enlaces dentro del contenedor */
+.text-containerNdvi a {
+  color: #388e3c; /* Verde oscuro para los enlaces */
+  text-decoration: none;
+}
+
+.text-containerNdvi a:hover {
+  color: #2e7d32; /* Verde más oscuro en hover */
+  text-decoration: underline;
+}

@@ -1,0 +1,37 @@
+/* Sidebar.css */
+.text-container {
+    margin-bottom: 18px;
+    font-family: 'Calibri', sans-serif; 
+    color: #333; /* Color de texto principal */
+    font-size: 0.9em;
+  }
+  
+  .text-title {
+    font-size: 1.2em; /* Tamaño de la fuente para el título */
+    font-weight: bold; /* Negrita para el título */
+    color: #2c3e50; /* Color del título */
+    margin-bottom: 10px; /* Espacio debajo del título */
+  }
+  
+  .text-description {
+    font-size: 0.8em; /* Tamaño de la fuente para la descripción */
+    color: #555; /* Color de la descripción */
+    line-height: 1.6; /* Espaciado entre líneas */
+    margin-bottom: 20px; /* Espacio debajo de la descripción */
+  }
+  
+  .text-container p {
+    text-align: justify; /* Hace que el texto esté justificado */
+  }
+  
+  .text-container h2 {
+    text-align: center; /* Opcional: centra el título si lo deseas */
+  }
+  
+  .text-container {
+    background-color: #cbfefe; /* Fondo claro */
+    padding: 15px; /* Añadir relleno dentro del contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de profundidad */
+  }
+  

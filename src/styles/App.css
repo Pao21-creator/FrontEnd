@@ -1,0 +1,43 @@
+/* App.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.loader-line.hidden {
+  display: none;
+}
+
+.container-fluid {
+  margin-top: 50px; /* Ajusta según la altura del navbar */
+}
+
+.navbar {
+  background-color: #043057;
+  color: white;
+}
+
+.menuSEPA {
+  display: flex;
+  justify-content: center;
+}
+
+.menuSEPA ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menuSEPA ul li {
+  margin: 0 20px;
+}
+
+.menuSEPA ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#mapa {
+  height: 100vh; /* Ajusta la altura según tus necesidades */
+}

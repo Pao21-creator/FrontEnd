@@ -1,0 +1,50 @@
+/* Contenedor del selector */
+.selector-ContainerAnualG {
+    margin-right: 100px; /* Agrega un margen si es necesario para separar el selector */
+  }
+
+  .tab-content-header {
+    display: flex;
+    justify-content: space-between; /* Alinea el título a la izquierda y el selector a la derecha */
+    align-items: center;  /* Asegura que ambos estén alineados verticalmente */
+    width: 100%;  /* Asegura que ocupe todo el ancho disponible */
+  }
+  
+  
+  /* Etiqueta del selector */
+  .selector-ContainerAnualG label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #1b676d;
+    margin-right: 10px;
+  }
+  
+  /* Estilo del select */
+  #Años-options-grafic {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    outline: none;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+  }
+  
+  /* Efecto cuando el select tiene foco */
+  #Años-options-grafic:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Estilos adicionales para las opciones */
+  #Años-options-grafic option {
+    padding: 8px;
+    font-size: 16px;
+    max-height: 150px; /* Controla el tamaño de la apertura */
+    overflow-y: auto;
+  }
+  
+  /* Para dar más espac
+  

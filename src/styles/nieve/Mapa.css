@@ -1,0 +1,159 @@
+/* Contenedor principal que maneja el layout de los mapas */
+.mapa-container {
+  margin-top: 70px; /* Espacio para la barra de navegación */
+  margin-left: 280px; /* Deja espacio para la barra lateral */
+  width: calc(100% - 280px); /* Asegura que ocupe el espacio restante */
+  height: calc(100vh - 70px); /* Ocupa todo el alto disponible (restando la altura del navbar) */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espacio entre los mapas y los tabs */
+  box-sizing: border-box;
+}
+
+.mapa-row {
+  display: flex; 
+  gap: 20px; 
+  height: 50%; 
+}
+  
+  /* Estilo para cada mapa */
+  .mapa {
+    flex: 1; /* Hace que cada mapa ocupe el mismo espacio */
+    height: 45vh; /* Tamaño del mapa, ajustable a menos de la mitad de la pantalla */
+    max-width: 48%; /* Asegura que cada mapa no ocupe más de la mitad de la pantalla */
+  }
+
+  .info.legend {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    font-size: 12px;
+    position: relative;
+  }
+  
+  .info.legend i {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  /*leyenda mapa y contribuidor*/
+  .leaflet-control-attribution {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    bottom: 0; /* Coloca el control en la parte inferior */
+    left: 0; /* Alinea el control a la izquierda */
+    right: 0; /* Asegura que ocupe el ancho completo */
+    z-index: 1000; /* Asegura que se superponga sobre otros elementos */
+    margin: 0 10px; /* Espaciado a los lados */
+  }
+
+  .leaflet-control-attribution a {
+    color: #4C7BE1;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+
+  .leaflet-control-attribution a:hover {
+    color: #FFD500;
+  }
+
+  .leaflet-attribution-flag {
+    margin-right: 5px;
+  }
+
+  .leaflet-control-attribution span {
+    margin: 0 5px;
+  }
+
+  .fixed-text {
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco semi-transparente */
+    color: #333; /* Color del texto */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño del texto */
+    font-weight: 600; /* Negrita */
+    z-index: 1000; /* Asegúrate de que el texto esté por encima de otros elementos del mapa */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombras suaves para dar profundidad */
+  }
+  
+  #mapYear {
+    position: absolute; 
+    bottom: 40px;
+    left: 10px;
+    z-index: 1000; /* Asegura que los textos queden sobre otros elementos */
+  }
+  
+  #mapProm {
+    position: absolute;
+    left: 10px;
+    bottom: 40px;
+    z-index: 1000; /* Asegura que los textos queden sobre otros elementos */
+  }
+
+
+  /*-----------------------------------*/
+
+.loading-spinnerMap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #333;
+  }
+
+  /* Estilo para el spinner */
+.spinnerMap {
+  border: 4px solid rgba(255, 255, 255, 0.3);  /* Fondo blanco semi-transparente */
+  border-top: 4px solid #3498db;  /* Color azul para la parte superior */
+  border-radius: 50%;
+  width: 50px;  /* Tamaño del spinner */
+  height: 50px;  /* Tamaño del spinner */
+  animation: spin 1s linear infinite;  /* Animación de giro */
+}
+
+/* Animación para el spinner */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estilo para el texto de "Cargando..." */
+.loading-spinnerMap p {
+  color: #3498db;  /* Color del texto (puedes cambiarlo según tus necesidades) */
+  font-size: 18px;
+  margin-top: 10px;  /* Espacio entre el spinner y el texto */
+  font-family: Arial, sans-serif;  /* Fuente del texto */
+}
+  
+  
+ 
+  @media (max-width: 768px) {
+    .map-container {
+      margin-left: 0; /* Los mapas ocupan toda la pantalla en pantallas pequeñas */
+      width: 100%;
+    }
+  
+    .mapa {
+      max-width: 100%; /* Los mapas ocuparán el 100% del ancho en pantallas pequeñas */
+      height: 45vh; /* Mantén la altura */
+    }
+  }
+  

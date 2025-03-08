@@ -1,0 +1,150 @@
+/* Navbar.css */
+
+/* Reseteo básico de márgenes y padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding-top: 70px; /* Ajuste el valor a la altura del navbar */
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #2874a6;
+  box-shadow: 0 4px 2px -2px rgb(22, 22, 22);
+}
+
+.navbar-new {
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-content {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding-left: 10px; /* Ajuste para el logo izquierdo */
+}
+
+/* Logotipo izquierdo */
+#logo-navbar {
+  margin: 0;  
+  padding: 0; 
+}
+
+#logo-navbar a {
+  margin: 0;
+  padding: 0; 
+}
+
+#logo-navbar a img {
+  max-height: 80px;
+  width: auto;
+  margin: 0; 
+  padding: 0;
+}
+
+/* Menú de navegación */
+.menuSEPA nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-left: auto;  /* Esto empuja el menú hacia la derecha */
+}
+
+.menuSEPA {
+  margin-left: auto;
+  padding-right: 30px;
+}
+
+.menuSEPA li {
+  display: inline-block;
+}
+
+.menuSEPA a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 8px 15px;
+  transition: background-color 0.3s;
+}
+
+.menuSEPA a:hover {
+  background-color: #2874a6; /* Efecto hover */
+  border-radius: 5px;
+}
+
+/* Logotipo derecho */
+#logo-help a img {
+  max-height: 40px;
+}
+
+/* Estilo para el botón de menú (hamburguesa) en pantallas pequeñas */
+.navbar-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+.navbar-toggle .icon-bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: white;
+}
+
+/* Estilos para pantallas pequeñas (Responsive Design) */
+@media (max-width: 768px) {
+  .navbar-new {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-toggle {
+    display: block; /* Muestra el botón de menú */
+  }
+
+  /* Menú colapsado */
+  .menuSEPA nav ul {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .menuSEPA a {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  /* Sección de logos */
+  #logo-navbar, #logo-help {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+/* Estilo para la versión del menú cuando está desplegado */
+.navbar-collapse {
+  display: none;
+}
+
+/* Cuando el menú se expande en dispositivos móviles */
+.navbar-toggle.collapsed + .navbar-collapse {
+  display: block;
+}

@@ -1,0 +1,31 @@
+/* Asegúrate de que este estilo esté en tu archivo CSS */
+.download-buttons-container {
+    display: flex;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+    margin-bottom: 10px; /* Espacio entre los botones y el gráfico */
+    padding-right: 10px; /* Espacio del borde derecho */
+  }
+  
+  button {
+    padding: 5px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px; /* Espacio entre los botones */
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilo adicional si quieres colocar los botones debajo del gráfico */
+  .download-buttons-container-bottom {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  

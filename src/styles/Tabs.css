@@ -1,0 +1,147 @@
+/* Contenedor de las pestañas */
+.tabs-container {
+  width: 100%;
+  height: auto;
+  background-color: #e1e1e1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+
+}
+
+/* Estilos generales para las pestañas */
+.tabs {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #b8b6b6;
+  padding: 0;
+  border-radius: 5px 5px 0 0;
+  margin: 0;
+}
+
+/* Pestaña individual */
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 5px 5px 0 0;
+  font-weight: 500;
+  color: #333;
+  margin-right: 5px;
+  background-color: #f1f1f1;
+}
+
+/* Efecto hover para las pestañas */
+.tab:hover {
+  background-color: #e9f5d4;
+  color: #333;
+  transform: translateY(-2px);
+}
+
+/* Estilo para la pestaña activa */
+.tab.active {
+  background-color: #f8f2bb;
+  color: #333;
+  border-bottom: 3px solid #007bff;
+  transform: translateY(-4px);
+  box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de contenido de las pestañas, inicialmente oculto */
+.tab-content {
+  display: none; /* Ocultamos todos los tab-content por defecto */
+  padding: 20px;
+  background-color: #ffffff;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  border-radius: 0 0 5px 5px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el contenido de la pestaña activa */
+.tab-content.active {
+  display: block; /* Solo el contenido de la pestaña activa se muestra */
+  background-color: #e1e1e1;
+  border-radius: 5px;
+  position: relative;
+}
+
+/* Estilo para el gráfico */
+#grafico {
+  margin-top: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 100%;
+}
+
+
+/* Estilo para la sección de coordenadas */
+.coordinates-info {
+  background-color: #f0f0f0; /* Fondo gris claro */
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  color: #333;
+}
+
+.coordinates-info h4 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #2c3e50; /* Color oscuro para el título */
+}
+
+.coordinates-info p {
+  font-size: 0.9em;
+  color: #555; /* Gris claro para el texto */
+  margin: 0;
+}
+
+/* Estilo general para el contenedor del spinner */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; /* Asegura que esté en el centro de la pantalla o contenedor */
+  right: 0px;
+  top: 10px;
+  background-color: rgba(255, 255, 255, 0.935);  /* Fondo semi-transparente */
+  z-index: 1000;  /* Asegura que esté encima de otros elementos */
+  width: 100% ;
+  height: 80%;
+}
+
+/* Estilo para el spinner */
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);  /* Fondo blanco semi-transparente */
+  border-top: 4px solid #3498db;  /* Color azul para la parte superior */
+  border-radius: 50%;
+  width: 50px;  /* Tamaño del spinner */
+  height: 50px;  /* Tamaño del spinner */
+  animation: spin 1s linear infinite;  /* Animación de giro */
+}
+
+/* Animación para el spinner */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estilo para el texto de "Cargando..." */
+.loading-spinner p {
+  color: #3498db;  /* Color del texto (puedes cambiarlo según tus necesidades) */
+  font-size: 18px;
+  margin-left: 10px;  /* Espacio entre el spinner y el texto */
+  font-family: Arial, sans-serif;  /* Fuente del texto */
+}

@@ -1,0 +1,48 @@
+/* Contenedor del selector de Año */
+.selector-containerAñoNdvi {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+  color: #333; /* Color de texto moderno */
+}
+
+/* Etiqueta del selector */
+.selector-containerAñoNdvi label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333; /* Color del texto más oscuro */
+
+}
+
+/* Estilo del select */
+#Años-options {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;/* Borde verde claro */
+  border-radius: 5px;
+  width: 200px;
+  outline: none;
+  background-color: #f5f5f5; /* Fondo blanco para un buen contraste */
+  transition: all 0.3s ease;
+}
+
+/* Efecto cuando el select tiene foco */
+#Años-options:focus {
+  border-color: #4CAF50;; /* Verde más brillante cuando el selector está en foco */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3); /* Sombra azul para foco */
+}
+
+/* Estilo para las opciones del selector */
+#Años-options option {
+  padding: 8px;
+  font-size: 16px;
+  background-color: #eaf7f3; /* Fondo suave para las opciones */
+}
+
+/* Mejorando la experiencia del selector */
+#Años-options option:hover {
+  background-color: #a5d6a7; /* Fondo verde claro al pasar el mouse */
+}

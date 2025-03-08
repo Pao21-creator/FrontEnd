@@ -1,0 +1,44 @@
+/* Contenedor del selector */
+.selector-containerProvNdvi {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  /* Etiqueta del selector */
+  .selector-containerProvNdvi label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  /* Estilo del select */
+  #map-options {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    outline: none;
+    background-color: #f5f5f5;
+    transition: all 0.3s ease;
+  }
+  
+  /* Efecto cuando el select tiene foco */
+  #map-options:focus {
+    border-color: #4CAF50; 
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+  }
+  
+  /* Estilos adicionales para las opciones */
+  #map-options option {
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  /* Para dar más espac
+  

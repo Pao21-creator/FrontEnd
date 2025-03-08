@@ -1,0 +1,44 @@
+/* Contenedor del selector */
+.selector-containerCuenca {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    color: #7ee1e8;
+  }
+  
+  /* Etiqueta del selector */
+  .selector-containerCuenca label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #7bdae1;
+  }
+  
+  /* Estilo del select */
+  #map-options {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    outline: none;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+  }
+  
+  /* Efecto cuando el select tiene foco */
+  #map-options:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Estilos adicionales para las opciones */
+  #map-options option {
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  /* Para dar más espac
+  

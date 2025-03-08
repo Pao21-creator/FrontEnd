@@ -1,0 +1,23 @@
+/* Grafico.css */
+
+/* Contenedor principal del gráfico */
+.chart-container {
+    width: 100%;  /* Ajusta el ancho del gráfico */
+    margin: 0 auto;  /* Centra el gráfico */
+    padding: 40px;
+}
+
+/* Estilo del canvas (el área donde se renderiza el gráfico) */
+#chartSerieAnual {
+    border-radius: 8px;  /* Bordes redondeados */
+    height: 300px;
+}
+
+/* Estilos personalizados para los tooltips */
+.chartjs-tooltip {
+    background-color: rgba(0, 0, 0, 0.7) !important;  /* Fondo oscuro para el tooltip */
+    color: #fff !important;  /* Color de texto blanco */
+    border-radius: 5px;  /* Bordes redondeados */
+    font-size: 14px;  /* Tamaño de fuente del tooltip */
+    padding: 10px;  /* Relleno dentro del tooltip */
+}
