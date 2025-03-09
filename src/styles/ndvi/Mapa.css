@@ -120,7 +120,7 @@
 
   /*-----------------------------------*/
 
-  .loading-spinner {
+    .loading-spinnerMap {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -128,6 +128,34 @@
     font-size: 24px;
     color: #333;
   }
+
+  /* Estilo para el spinner */
+.spinnerMap {
+  border: 4px solid rgba(255, 255, 255, 0.3);  /* Fondo blanco semi-transparente */
+  border-top: 4px solid #3498db;  /* Color azul para la parte superior */
+  border-radius: 50%;
+  width: 50px;  /* Tamaño del spinner */
+  height: 50px;  /* Tamaño del spinner */
+  animation: spin 1s linear infinite;  /* Animación de giro */
+}
+
+/* Animación para el spinner */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estilo para el texto de "Cargando..." */
+.loading-spinnerMap p {
+  color: #3498db;  /* Color del texto (puedes cambiarlo según tus necesidades) */
+  font-size: 18px;
+  margin-top: 10px;  /* Espacio entre el spinner y el texto */
+  font-family: Arial, sans-serif;  /* Fuente del texto */
+}
   
   
  
