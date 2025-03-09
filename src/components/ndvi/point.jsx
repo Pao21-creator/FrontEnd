@@ -3,6 +3,7 @@ import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet-draw';
 import 'leaflet-draw/dist/leaflet.draw.css';
+import { useSelector } from "../../context/selectorContext";
 
 const DibujoMarcadores = ({ onMarkerDrawn, onPolygonDrawn, markerPosition }) => {
   const map = useMap();
