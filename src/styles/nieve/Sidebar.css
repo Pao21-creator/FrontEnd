@@ -6,18 +6,20 @@
   }
   
   /* Estilo para la barra lateral */
-  .sidebar {
-    position: fixed;
-    top: 60px; /* Asegúrate de que el navbar tiene 70px de alto, ajusta este valor */
-    left: 0;
-    width: 250px; /* Ajusta el ancho de la barra lateral */
-    height: 100%; /* Ocupa toda la altura de la pantalla */
-    background-color: #2874a6 ;
-    color: white;
-    padding-top: 20px;
-    padding-left: 10px;
-    padding-right: 5px;
-  }
+.sidebar {
+  position: fixed;
+  top: 60px; /* Ajuste de altura según el navbar */
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-image:  linear-gradient(to bottom, rgba(26, 64, 111, 0.7), rgba(38, 129, 169, 0.9)), url('../../assets/img/nieve.jpg'); 
+  background-position: center 30%; /* Esto mueve la imagen hacia abajo, ajusta el 30% según sea necesario */
+  background-size: cover; /* Asegura que la imagen se cubra correctamente */
+  color: white;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 5px;
+}
   
   .sidebar ul {
     list-style-type: none;
