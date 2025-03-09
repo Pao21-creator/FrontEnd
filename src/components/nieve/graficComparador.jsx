@@ -19,6 +19,11 @@ const GraficComparador = ({ fechas, valores, year2, year, cuenca }) => {
   const [fechaGrafico, setFechaGrafico] = useState([]);  // Estado para almacenar las fechas
   const [loadingGraph, setLoadingGraph] = useState(false); // Estado para controlar el loading del gráfico
 
+
+  const cleanDate = (fechaStr) => {
+  return fechaStr.trim(); // Eliminar posibles espacios adicionales
+};
+  
   const isValidDate = (fechaStr) => {
   // Validar que la fecha tenga el formato dd/mm
   const regex = /^\d{2}\/\d{2}$/;
