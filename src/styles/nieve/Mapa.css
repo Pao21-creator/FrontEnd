@@ -58,6 +58,11 @@
     margin: 0 10px; /* Espaciado a los lados */
   }
 
+.leaflet-top, .leaflet-bottom {
+    z-index: 1000;
+    pointer-events: auto;  /* Cambiar a auto para habilitar la interacción */
+}
+
   .leaflet-control-attribution a {
     color: #4C7BE1;
     text-decoration: none;
