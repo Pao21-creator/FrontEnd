@@ -27,7 +27,7 @@ const GraficComparador = ({ fechas, valores, year2, year, prov, point }) => {
     }
     setLoadingGraph(true); // Activar loading para el gráfico cuando empieza a cargar los datos
     axios
-      .post("http://localhost:3000/getNdviYearComparador", {
+      .post("https://backend-geosepa.onrender.com/getNdviYearComparador", {
         funcion : 'graficoComparativo',
         prov : prov,
         año: year2,
