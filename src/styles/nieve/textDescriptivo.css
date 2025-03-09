@@ -1,10 +1,14 @@
 /* Sidebar.css */
 .text-container {
-    margin-bottom: 18px;
-    font-family: 'Calibri', sans-serif; 
-    color: #333; /* Color de texto principal */
-    font-size: 0.9em;
-  }
+  margin-bottom: 18px;
+  font-family: 'Calibri', sans-serif; 
+  color: #003333; /* Verde oscuro suave para el texto */
+  font-size: 0.9em;
+  background-image: linear-gradient(to bottom, #c2e6e8, #2799a6); /* Degradado suave de verde claro a verde más brillante */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
   
   .text-title {
     font-size: 1.2em; /* Tamaño de la fuente para el título */
