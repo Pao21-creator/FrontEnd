@@ -16,7 +16,7 @@ const Grafico = ({ fechas, valores, year }) => {
 
   // Cargar los datos CSV y procesarlos
   useEffect(() => {
-    fetch('src/data/PromedioNieve2001_2024.csv')
+    fetch('/data/PromedioNieve2001_2024.csv')
       .then((response) => response.text())
       .then((csvText) => {
         Papa.parse(csvText, {
