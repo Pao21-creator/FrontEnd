@@ -62,7 +62,7 @@ const GraficComparador = ({ fechas, valores, year2, year, cuenca }) => {
     setLoadingGraph(true); // Activar loading para el gráfico cuando empieza a cargar los datos
     
     axios
-      .post("http://localhost:3000/getCuencaYearComparador", {
+      .post("https://backend-geosepa.onrender.com/getCuencaYearComparador", {
         funcion : 'graficoComparativo',
         cuenca : cuenca,
         año: year2
