@@ -12,7 +12,7 @@
   left: 0;
   width: 250px;
   height: 100%;
-  background-image:  linear-gradient(to bottom, rgba(26, 64, 111, 0.7), rgba(38, 129, 169, 0.9)), url('../../assets/img/nieve.jpg'); 
+  background-image:  linear-gradient(to bottom, rgba(26, 64, 111, 0.7), rgba(38, 129, 169, 0.9)), url('/assets/img/nieve.jpg'); 
   background-position: center 30%; /* Esto mueve la imagen hacia abajo, ajusta el 30% según sea necesario */
   background-size: cover; /* Asegura que la imagen se cubra correctamente */
   color: white;
