@@ -144,8 +144,8 @@ function Tabs({ fechas, valores, year }) {
 
           {/* Indicador de carga y Grafico */}
           {loadingPolygon ? (
-            <div className="loading-spinner">
-              <div className="spinner"></div>
+            <div className="loading-spinnerGraf">
+              <div className="spinnerGraf"></div>
               <p> Cargando...</p>
             </div>
           ) : (
@@ -189,8 +189,8 @@ function Tabs({ fechas, valores, year }) {
 
           {/* Indicador de carga y Comparador */}
           {loadingPolygon ? (
-            <div className="loading-spinner">
-              <div className="spinner"></div>
+            <div className="loading-spinnerGraf">
+              <div className="spinnerGraf"></div>
               <p>Cargando...</p>
             </div>
           ) : (
