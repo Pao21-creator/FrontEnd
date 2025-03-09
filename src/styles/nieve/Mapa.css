@@ -93,14 +93,14 @@
     position: absolute; 
     bottom: 40px;
     left: 10px;
-    z-index: 1000; /* Asegura que los textos queden sobre otros elementos */
+    z-index: 800; /* Asegura que los textos queden sobre otros elementos */
   }
   
   #mapProm {
     position: absolute;
     left: 10px;
     bottom: 40px;
-    z-index: 1000; /* Asegura que los textos queden sobre otros elementos */
+    z-index: 800; /* Asegura que los textos queden sobre otros elementos */
   }
 
 
