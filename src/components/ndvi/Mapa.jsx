@@ -37,7 +37,7 @@ function Mapa({ prov, year, point }) {
       setLoading(true);  // Iniciar el estado de carga
   
       axios
-        .post("http://localhost:3000/getPointNdvi", {
+        .post("https://backend-geosepa.onrender.com/getPointNdvi", {
           funcion: 'graficoAnual',
           point: selectedPoint, // Usamos el selectedPoint para obtener los datos del punto
           año: year
@@ -97,7 +97,7 @@ const handlePolygonDrawn = (coordinates) => {
     const currentPoint = selectedPoint;
 
     axios
-      .post("http://localhost:3000/getMapIdNdvi", {
+      .post("https://backend-geosepa.onrender.com/getMapIdNdvi", {
         funcion: 'graficoAnual',
         prov: prov,
         año: year,
