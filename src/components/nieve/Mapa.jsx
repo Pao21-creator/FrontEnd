@@ -24,7 +24,7 @@ function Mapa({ cuenca, year }) {
     setLoading(true);
 
     axios
-      .post("http://localhost:3000/getMapIdCuenca", {
+      .post("https://backend-geosepa.onrender.com/getMapIdCuenca", {
         funcion : 'graficoAnual',
         cuenca : cuenca,
         año: year
