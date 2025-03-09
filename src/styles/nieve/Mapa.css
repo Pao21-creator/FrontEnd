@@ -59,6 +59,7 @@
   }
 
 .leaflet-top, .leaflet-bottom {
+    position: static,
     z-index: 1000;
     pointer-events: auto;  /* Cambiar a auto para habilitar la interacción */
 }
