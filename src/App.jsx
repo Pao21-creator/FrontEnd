@@ -14,7 +14,6 @@ function App() {
       {/* Coloca el Navbar y el h1 dentro del Router */}
       <div>
         <Navbar />
-        <h1>Bienvenido a la Página</h1>
       </div>
 
       {/* Rutas que cambian según la URL */}
