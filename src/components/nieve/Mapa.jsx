@@ -62,7 +62,7 @@ function Mapa({ cuenca, year }) {
     return <div className="loading-spinner">
     <div className="spinner"></div>
     <p>Cargando...</p>
-  </div>;;
+  </div>;
   }
 
   return (
