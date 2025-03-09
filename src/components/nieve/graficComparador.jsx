@@ -19,42 +19,47 @@ const GraficComparador = ({ fechas, valores, year2, year, cuenca }) => {
   const [fechaGrafico, setFechaGrafico] = useState([]);  // Estado para almacenar las fechas
   const [loadingGraph, setLoadingGraph] = useState(false); // Estado para controlar el loading del gráfico
 
+  const isValidDate = (fechaStr) => {
+  // Validar que la fecha tenga el formato dd/mm
+  const regex = /^\d{2}\/\d{2}$/;
+  return regex.test(fechaStr);
+};
 
-  // Cargar los datos CSV y procesarlos
-  useEffect(() => {
-    fetch('src/data/PromedioNieve2001_2024.csv')
-      .then((response) => response.text())
-      .then((csvText) => {
-        Papa.parse(csvText, {
-          complete: (result) => {
-            const data = result.data;
-            const labels = [];
-            const dataValues = [];
+ useEffect(() => {
+  fetch('src/data/PromedioNieve2001_2024.csv')
+    .then((response) => response.text())
+    .then((csvText) => {
+      Papa.parse(csvText, {
+        complete: (result) => {
+          const data = result.data;
+          const labels = [];
+          const dataValues = [];
 
-            data.slice(1).forEach((row, index) => { // Ignorar la primera fila
-              const fechaStr = row[0]; // Columna 1: Fecha (en formato dd/mm)
-              if (fechaStr.includes('/')) {
-                const [day, month] = fechaStr.split('/');
-                const promedioNieve = parseFloat(row[1]); // Columna 2: Promedio de nieve (como eje Y)
-                labels.push(fechaStr); // Asignamos la fecha al eje X
-                dataValues.push(promedioNieve); // Asignamos el valor de nieve al eje Y
-              } else {
-                console.warn(`Fecha no contiene '/' en la fila ${index + 1}: ${fechaStr}`);
-              }
-            });
+          data.slice(1).forEach((row, index) => { // Ignorar la primera fila
+            let fechaStr = cleanDate(row[0]); // Limpiar posibles espacios extra
+            if (isValidDate(fechaStr)) {
+              const [day, month] = fechaStr.split('/');
+              const promedioNieve = parseFloat(row[1]); // Columna 2: Promedio de nieve (como eje Y)
+              labels.push(fechaStr); // Asignamos la fecha al eje X
+              dataValues.push(promedioNieve); // Asignamos el valor de nieve al eje Y
+            } else {
+              console.warn(`Fecha mal formada o vacía en la fila ${index + 1}: ${fechaStr}`);
+            }
+          });
 
-            setChartData({ 
-              labels, 
-              data: dataValues,
-              apiData: valores, 
-              apiLabels: fechas
-            });
-          },
-          header: false,
-          skipEmptyLines: true,
-        });
+          setChartData({ 
+            labels, 
+            data: dataValues, 
+            apiData: valores, 
+            apiLabels: fechas 
+          });
+        },
+        header: false,
+        skipEmptyLines: true,
       });
-  }, []); // Solo se ejecuta al montar el componente
+    });
+}, []); // Solo se ejecuta al montar el componente
+
 
 
 
