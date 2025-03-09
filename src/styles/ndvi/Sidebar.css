@@ -1,18 +1,19 @@
 /* Contenedor principal para el layout */
 .main-container {
-    display: flex;
-    height: calc(100vh - 70px); /* Ocupa toda la pantalla, menos el espacio del navbar (ajustar según el tamaño del navbar) */
-    width: 100%;
-  }
-  
- /* Barra lateral */
+  display: flex;
+  height: calc(100vh - 70px); /* Ocupa toda la pantalla, menos el espacio del navbar (ajustar según el tamaño del navbar) */
+  width: 100%;
+}
+
+/* Barra lateral */
 .sidebarNdvi {
   position: fixed;
   top: 60px; /* Ajuste de altura según el navbar */
   left: 0;
   width: 250px;
   height: 100%;
-  background-color: #82b55f; /* Verde oliva claro y suave */
+  background-image:  linear-gradient(to bottom, rgba(23, 111, 67, 0.7), rgba(8, 143, 118, 0.9)), url('../../assets/img/hoja.jpg'); 
+ 
   color: white;
   padding-top: 20px;
   padding-left: 10px;
@@ -42,22 +43,23 @@
 
 /* Efecto hover sobre los enlaces */
 .sidebarNdvi a:hover {
-  background-color: #7B9E65; /* Verde oliva más brillante para el hover */
+  background-color: #04a570; /* Verde más brillante para el hover */
   padding-left: 20px; /* Desplazamiento hacia la derecha */
   transform: scale(1.05); /* Efecto sutil de agrandamiento */
 }
 
-  /* Estilo responsivo para pantallas pequeñas */
+
+/* Estilo responsivo para pantallas pequeñas */
 @media (max-width: 768px) {
-    .sidebarNdvi {
-      position: relative; /* La barra lateral ya no estará fija */
-      width: 100%;
-      height: auto; /* Ajusta la altura según el contenido */
-      top: 0; /* Remueve el top fijo */
-      padding: 10px;
-    }
-  
-    .sidebarNdvi a {
-      font-size: 16px;
-    }
-}  
+  .sidebarNdvi {
+    position: relative; /* La barra lateral ya no estará fija */
+    width: 100%;
+    height: auto; /* Ajusta la altura según el contenido */
+    top: 0; /* Remueve el top fijo */
+    padding: 10px;
+  }
+
+  .sidebarNdvi a {
+    font-size: 16px;
+  }
+}
