@@ -59,7 +59,10 @@ function Mapa({ cuenca, year }) {
   }, [cuencas]);
 
   if (loading) {
-    return <div className="loading-spinner">Cargando mapa...</div>;
+    return <div className="loading-spinner">
+    <div className="spinner"></div>
+    <p>Cargando...</p>
+  </div>;;
   }
 
   return (
