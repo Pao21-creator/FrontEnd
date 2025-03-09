@@ -50,7 +50,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    position: absolute;
+
     bottom: 0; /* Coloca el control en la parte inferior */
     left: 0; /* Alinea el control a la izquierda */
     right: 0; /* Asegura que ocupe el ancho completo */
