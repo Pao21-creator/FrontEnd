@@ -1,1 +1,102 @@
 
+/* Estilo para el contenedor principal de la página */
+.home {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+  background-color: #f4f4f4; /* Fondo claro para un contraste suave */
+  font-family: 'Poppins', sans-serif; /* Fuente moderna */
+}
+
+/* Contenedor que incluye el carrusel */
+.main-containerHome {
+  position: relative;
+  flex-grow: 1;
+  background: linear-gradient(to top, rgba(169, 169, 169, 0.5), rgba(255, 255, 255, 0.5)), url('/assets/img/agroclima.jpg');
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 50px;
+  padding-top: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidad */
+}
+
+/* Estilo para el texto en la parte superior */
+.header-text {
+  position: absolute;
+  margin-top: 100px; /* Reajustar el texto para que no esté tan arriba */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  z-index: 10;
+  max-width: 80%; /* Ajustar el ancho */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con transparencia */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra con más profundidad */
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Efecto al pasar el ratón sobre el texto */
+.header-text:hover {
+  transform: translateX(-50%) translateY(-10px); /* Eleva el texto al pasar el ratón */
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo más oscuro */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Aumenta la sombra */
+}
+
+/* Estilo para el título (h1) dentro del header-text */
+.header-text h1 {
+  font-size: 2.5rem; /* Aumenta el tamaño del título */
+  font-weight: 700;
+  letter-spacing: 1px; /* Espaciado entre letras */
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra suave para el título */
+}
+
+/* Estilo para el subtítulo (h2) dentro del header-text */
+.header-text h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #f2f2f2;
+  text-transform: uppercase; /* Transforma el texto a mayúsculas */
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Sombra suave para el subtítulo */
+}
+
+/* Estilo para los párrafos dentro del header-text */
+.header-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 10px;
+  color: #f2f2f2; /* Color más suave para el texto */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra ligera para los párrafos */
+}
+
+/* Estilo para el texto al pasar el ratón sobre los párrafos */
+.header-text p:hover {
+  color: #ffcc00; /* Color dorado al pasar el ratón */
+  transition: color 0.3s ease; /* Transición suave del color */
+}
+
+/* Efecto general de desvanecimiento */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aplica la animación fadeIn a la cabecera */
+.header-text {
+  animation: fadeIn 1s ease-in-out;
+}
