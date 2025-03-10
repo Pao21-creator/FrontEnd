@@ -5,27 +5,24 @@ import Focos from './pages/Focos.jsx';
 import Nieve from './pages/Nieve.jsx';
 import Ndvi from './pages/Ndvi.jsx';
 import Nevadas from './pages/Nevadas.jsx';
-import Navbar from './components/Navbar.jsx';
-
+import Home from './pages/Home'; 
+import './styles/App.css';
 
 function App() {
   return (
     <Router>
-      {/* Coloca el Navbar y el h1 dentro del Router */}
-      <div>
-        <Navbar />
-      </div>
 
-      {/* Rutas que cambian según la URL */}
-      <SelectorProvider>
-      <Routes>
-        {/* Ruta para la página de Nieve, envuelves Ndvi en SelectorProvider */}
-        <Route path="/nieve" element={<Nieve />} />
-        <Route path="/focos" element={<Focos />} />  
-        <Route path="/nevadas" element={<Nevadas />} /> 
-        <Route path="/ndvi" element={<Ndvi />} />  
-      </Routes>
-      </SelectorProvider>
+        {/* Rutas que cambian según la URL */}
+        <SelectorProvider>
+          <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/nieve" element={<Nieve />} />
+            <Route path="/focos" element={<Focos />} />  
+            <Route path="/nevadas" element={<Nevadas />} /> 
+            <Route path="/ndvi" element={<Ndvi />} />  
+          </Routes>
+        </SelectorProvider>
+    
     </Router>
   );
 }
