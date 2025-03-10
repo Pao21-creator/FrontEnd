@@ -143,8 +143,11 @@ const handlePolygonDrawn = (coordinates) => {
             style={{ height: "100%", width: "100%" }}
           >
             <div id="mapYearNdvi"></div>
-            <TileLayer
+   {/*         <TileLayer
               url="https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/capabaseargenmap@EPSG%3A3857@png/{z}/{x}/{-y}.png"
+            /> */}
+            <TileLayer
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
             {mapDataYear && (
