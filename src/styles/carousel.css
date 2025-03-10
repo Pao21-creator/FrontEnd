@@ -1,0 +1,81 @@
+/* Contenedor principal del carrusel */
+.carousel {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  height: auto;
+  padding: 20px 0;
+  position: relative; /* Necesario para el posicionamiento de las flechas */
+}
+
+/* Estilo para cada slide del carrusel */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+/* Estilo para las imágenes dentro del carrusel */
+.swiper-slide img {
+  width: auto;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transform: scale(0.6);
+  transition: transform 0.3s ease;
+}
+
+/* Aumentar el tamaño de la imagen central */
+.swiper-slide-active img {
+  transform: scale(1.2);
+}
+
+/* Estilo para los botones personalizados */
+button {
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+
+/* Estilo de los puntos de navegación (paginación) */
+.swiper-pagination-bullet {
+  background-color: #fff;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #007bff;
+  opacity: 1;
+}
+
+/* Personalización del scrollbar */
+.swiper-scrollbar {
+  height: 8px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-scrollbar-drag {
+  background-color: #007bff;
+}
