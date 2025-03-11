@@ -73,12 +73,17 @@ const Carousel = () => {
       </Swiper>
 
       {/* Botones personalizados para navegar entre los slides */}
-      <button onClick={goToPrevSlide} className="swiper-button-prev">
+      <button onClick={goToPrevSlide} className="carousel-button carousel-button-prev">
+        {/* Puedes agregar un ícono o texto aquí si lo deseas */}
+        {"<"} {/* Ícono o texto para el botón previo */}
       </button>
-      <button onClick={goToNextSlide} className="swiper-button-next">
+      <button onClick={goToNextSlide} className="carousel-button carousel-button-next">
+        {/* Puedes agregar un ícono o texto aquí si lo deseas */}
+        {">"} {/* Ícono o texto para el botón siguiente */}
       </button>
     </div>
   );
 };
 
 export default Carousel;
+
