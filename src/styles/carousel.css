@@ -31,31 +31,31 @@
   transform: scale(1.2);
 }
 
-/* Estilo para los botones personalizados */
-.carousel-button {
-  padding: 10px 20px;
+/* Personalización de los controles del carrusel */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+  font-size: 24px;
   background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 18px;
-  transition: background-color 0.3s;
+  border-radius: 50%;
+  padding: 10px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 10; /* Asegura que las flechas estén encima de otros elementos */
 }
 
-.carousel-button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+.swiper-button-next {
+  right: 10px;
 }
 
 .swiper-button-prev {
   left: 10px;
 }
 
-.swiper-button-next {
-  right: 10px;
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Estilo de los puntos de navegación (paginación) */
@@ -78,3 +78,4 @@
 .swiper-scrollbar-drag {
   background-color: #007bff;
 }
+
