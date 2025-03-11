@@ -32,7 +32,7 @@
 }
 
 /* Estilo para los botones personalizados */
-button {
+.carousel-button {
   padding: 10px 20px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -46,7 +46,7 @@ button {
   transform: translateY(-50%);
 }
 
-button:hover {
+.carousel-button:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -57,7 +57,6 @@ button:hover {
 .swiper-button-next {
   right: 10px;
 }
-
 
 /* Estilo de los puntos de navegación (paginación) */
 .swiper-pagination-bullet {
