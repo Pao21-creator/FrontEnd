@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start:frontend": "vite",
-    "start": "npm run start:frontend"  // Solo ejecuta el frontend
+    "start": "npm run start:frontend"  
   },
   "dependencies": {
     "axios": "^1.7.9",
