@@ -82,7 +82,7 @@ function Tabs({ fechas, valores, year }) {
     console.log("Coordenadas reformateadas:", reformattedCoordinates);
 
     axios
-      .post("http://localhost:3000/getPolyNdvi", {
+      .post("https://backend-geosepa.onrender.com/getPolyNdvi", {
         funcion: "graficoAnual",
         polygon: reformattedCoordinates, // Enviamos el polígono reformateado
         año: year,
