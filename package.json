@@ -5,18 +5,18 @@
   "type": "module",
   "scripts": {
     "start:frontend": "vite",
-    "start:backend": "node D:/BackEnd-GEOSEPA/server.js",
+    "start:backend": "node C:/Users/mendoza.paola/Desktop/BackEnd-GEOSEPA-main",
     "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\""
   },
   "dependencies": {
     "axios": "^1.7.9",
     "chart.js": "^4.4.7",
-    "leaflet": "^1.7.1",
+    "leaflet": "^1.9.4",
     "leaflet-draw": "^1.0.4",
     "papaparse": "^5.5.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-leaflet": "^3.2.0",
+    "react-leaflet": "^4.0.0",
     "react-router-dom": "^7.1.5",
     "styled-components": "^6.1.14",
     "swiper": "^7.4.1"
