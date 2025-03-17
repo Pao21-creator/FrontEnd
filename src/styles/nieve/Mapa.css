@@ -1,6 +1,6 @@
 /* Contenedor principal que maneja el layout de los mapas */
 .mapa-container {
-  margin-top: 30px; /* Espacio para la barra de navegación */
+  margin-top: 100px; /* Espacio para la barra de navegación */
   margin-left: 280px; /* Deja espacio para la barra lateral */
   width: calc(100% - 280px); /* Asegura que ocupe el espacio restante */
   height: calc(100vh - 70px); /* Ocupa todo el alto disponible (restando la altura del navbar) */
