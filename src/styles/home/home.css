@@ -96,7 +96,3 @@
   }
 }
 
-/* Aplica la animación fadeIn a la cabecera */
-.header-text {
-  animation: fadeIn 1s ease-in-out;
-}
