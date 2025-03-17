@@ -52,6 +52,7 @@ function Mapa({ prov, year, point }) {
         setOutlineData(data.outlineUrl); // Obtiene la URL del contorno
         setValoresNdvi(data.valoresNdviPunto);  // Actualiza los valores de nieve
         setFechaGrafico(data.fechaGrafico);  // Actualiza las fechas
+        setPolygonPosition(null);
         setLoading(false);
       })
       .catch((error) => {
