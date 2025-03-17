@@ -14,7 +14,7 @@ const GraficComparador = ({ fechas, valores, year2, year, prov, point }) => {
   const [chartData, setChartData] = useState({ labels: [], dataNdvi: [] });
   const [chartReady, setChartReady] = useState(false);
   const [chartInstance, setChartInstance] = useState(null); 
-  const { polygonPosition } = useSelector();
+  const { polygonPosition, selectedPoint } = useSelector();
   const [valoresNdviPunto, setValoresNdviPunto] = useState([]);
   const [fechaGrafico, setFechaGrafico] = useState([]);  // Estado para almacenar las fechas
   const [loadingGraph, setLoadingGraph] = useState(false); // Estado para controlar el loading del gráfico
@@ -22,16 +22,17 @@ const GraficComparador = ({ fechas, valores, year2, year, prov, point }) => {
 
   // Cargar datos de la API
   useEffect(() => {
-    if (polygonPosition || polygonPosition !== null || polygonPosition.length !== 0) {
-      return;  // Si el polígono está vacío o si ya se está cargando, no hacemos nada.
-    }
+    if (!selectedPoint || selectedPoint === null || selectedPoint.length === 0) {
+      return;  // Si el polígono está vacío o no está definido, no hacemos nada.
+  }
+
     setLoadingGraph(true); // Activar loading para el gráfico cuando empieza a cargar los datos
     axios
-      .post("https://backend-geosepa.onrender.com/getNdviYearComparador", {
+      .post("http://localhost:3000/getNdviYearComparador", {
         funcion : 'graficoComparativo',
         prov : prov,
         año: year2,
-        point: point
+        point: point || selectedPoint
       })
       .then((response) => {
         const data = response.data;
@@ -45,7 +46,7 @@ const GraficComparador = ({ fechas, valores, year2, year, prov, point }) => {
         console.log("error es", error);
         setLoadingGraph(false); // Desactivar loading si ocurre un error
       });
-  }, [prov, year2, point]); // Se ejecuta cuando cambian `cuenca` o `year`
+  }, [prov, year2, selectedPoint, point]); // Se ejecuta cuando cambian `cuenca` o `year`
 
 
 
@@ -63,8 +64,8 @@ const GraficComparador = ({ fechas, valores, year2, year, prov, point }) => {
 
   useEffect(() => {
     if (!polygonPosition || polygonPosition === null || polygonPosition.length === 0) {
-      return;  // Si el polígono está vacío o si ya se está cargando, no hacemos nada.
-    }
+      return;  // Si el polígono está vacío o no está definido, no hacemos nada.
+  }
 
     setLoadingGraph(true);  // Iniciar carga
 
@@ -72,7 +73,7 @@ const GraficComparador = ({ fechas, valores, year2, year, prov, point }) => {
     console.log('Coordenadas reformateadas:', reformattedCoordinates);
 
     axios
-      .post("https://backend-geosepa.onrender.com/getPolyNdvi", {
+      .post("http://localhost:3000/getPolyNdvi", {
         funcion: 'graficoAnual',
         polygon: reformattedCoordinates,  // Enviamos el polígono reformateado
         año: year2
@@ -196,3 +197,4 @@ const GraficComparador = ({ fechas, valores, year2, year, prov, point }) => {
 };
 
 export default GraficComparador;
+
