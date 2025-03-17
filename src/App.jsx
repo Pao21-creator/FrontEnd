@@ -15,7 +15,7 @@ function App() {
         {/* Rutas que cambian según la URL */}
         <SelectorProvider>
           <Routes>
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/nieve" element={<Nieve />} />
             <Route path="/focos" element={<Focos />} />  
             <Route path="/nevadas" element={<Nevadas />} /> 
