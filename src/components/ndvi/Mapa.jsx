@@ -8,6 +8,7 @@ import L from 'leaflet';
 import LegendControl from './LegendControl';  
 import { useSelector } from "../../context/selectorContext";
 import DibujoMarcadores from './point';  // Importamos el componente
+import CursorCoordinates from './CursorCoordinates';  
 
 function Mapa({ prov, year, point }) {
   const {selectedPoint, selectedProv ,setSelectedPoint } = useSelector(); // Accedemos a los valores del contexto
@@ -15,7 +16,7 @@ function Mapa({ prov, year, point }) {
   const [outlineData, setOutlineData] = useState(null);
   const {valoresNdvi, setValoresNdvi} = useSelector();
   const {fechaGrafico, setFechaGrafico} = useSelector();
-  const { setPolygonPosition } = useSelector();
+  const {PolygonPosition, setPolygonPosition } = useSelector();
   const [previousPolygonPosition, setPreviousPolygonPosition] = useState(null);
   const [loading, setLoading] = useState(true);  // Carga general
   const [center, setCenter] = useState([51.505, -0.09]);
@@ -29,6 +30,36 @@ function Mapa({ prov, year, point }) {
   useEffect(() => {
     setMarkerPosition(selectedPoint);  // Esto mantiene la posición del marcador sincronizada con selectedPoint
   }, [selectedPoint]);
+
+  useEffect(() => {
+    setLoading(true);
+
+    const currentPoint = selectedPoint;
+
+  axios
+      .post("https://backend-geosepa.onrender.com/getMapIdNdvi", {
+        funcion: 'graficoAnual',
+        prov: selectedProv,
+        año: year,
+        point: currentPoint  // Usamos currentPoint (puede ser markerPosition o el valor recibido como parámetro)
+      })
+      .then((response) => {
+        const data = response.data;
+        console.log("Éxito con la comunicación a la API", data);
+
+        // Actualiza los estados con los datos de la respuesta
+        setMapDataYear(data.urlYear);
+        setOutlineData(data.outlineUrl); // Obtiene la URL del contorno
+        setValoresNdvi(data.valoresNdviPunto);  // Actualiza los valores de nieve
+        setFechaGrafico(data.fechaGrafico);  // Actualiza las fechas
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error al obtener el MapID:", error);
+        setLoading(false);
+      });
+  }, [selectedProv, year]);  // Dependemos de markerPosition, prov, year, y point
+
 
   // Este useEffect solo se ejecutará cuando selectedPoint cambie
   useEffect(() => {
@@ -81,7 +112,6 @@ const handlePolygonDrawn = (coordinates) => {
       
       setPolygonPosition(coordinates);  // Guardamos la nueva posición del polígono
       setPreviousPolygonPosition(coordinates); // Actualizamos las coordenadas previas
-
     } else {
       console.log('Las coordenadas del polígono no han cambiado.');
     }
@@ -89,36 +119,6 @@ const handlePolygonDrawn = (coordinates) => {
     console.error('Las coordenadas recibidas no son válidas:', coordinates);
   }
 };
-
-
-  useEffect(() => {
-    setLoading(true);
-
-    const currentPoint = selectedPoint;
-
-    axios
-      .post("https://backend-geosepa.onrender.com/getMapIdNdvi", {
-        funcion: 'graficoAnual',
-        prov: prov,
-        año: year,
-        point: currentPoint  // Usamos currentPoint (puede ser markerPosition o el valor recibido como parámetro)
-      })
-      .then((response) => {
-        const data = response.data;
-        console.log("Éxito con la comunicación a la API", data);
-
-        // Actualiza los estados con los datos de la respuesta
-        setMapDataYear(data.urlYear);
-        setOutlineData(data.outlineUrl); // Obtiene la URL del contorno
-        setValoresNdvi(data.valoresNdviPunto);  // Actualiza los valores de nieve
-        setFechaGrafico(data.fechaGrafico);  // Actualiza las fechas
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error al obtener el MapID:", error);
-        setLoading(false);
-      });
-  }, [selectedProv, year]);  // Dependemos de markerPosition, prov, year, y point
 
 
 
@@ -143,12 +143,12 @@ const handlePolygonDrawn = (coordinates) => {
             style={{ height: "100%", width: "100%" }}
           >
             <div id="mapYearNdvi"></div>
-   {/*         <TileLayer
+       {/*  <TileLayer
               url="https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/capabaseargenmap@EPSG%3A3857@png/{z}/{x}/{-y}.png"
-            /> */}
-            <TileLayer
+            />  */}
+               <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
+            /> 
 
             {mapDataYear && (
               <TileLayer
@@ -171,8 +171,10 @@ const handlePolygonDrawn = (coordinates) => {
             <LegendControl year={year} />
 
             {/* Aquí pasamos las coordenadas al componente DibujoMarcadores */}
-            <DibujoMarcadores onMarkerDrawn={handleMarkerDrawn}   onPolygonDrawn={handlePolygonDrawn}  markerPosition={markerPosition} />
+            <DibujoMarcadores onMarkerDrawn={handleMarkerDrawn}   onPolygonDrawn={handlePolygonDrawn}  markerPosition={markerPosition}/>
 
+            <CursorCoordinates />
+            
           </MapContainer>
         </div>
       </div>
@@ -185,3 +187,4 @@ const handlePolygonDrawn = (coordinates) => {
 }
 
 export default Mapa;
+
