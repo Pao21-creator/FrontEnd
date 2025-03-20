@@ -1,0 +1,23 @@
+/* Estilo del Tooltip (centrado en el mapa) */
+.tooltip-custom {
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: white; 
+    padding: 8px 12px;  
+    border-radius: 5px; 
+    font-size: 13px;  
+    font-weight: 500;  
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
+    white-space: nowrap; /* Evita que el texto se rompa */
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Ajuste para centrar perfectamente */
+    z-index: 1000;
+    pointer-events: none; /* Asegura que no interfiera con la interacción del mapa */
+    width: 300px; 
+    word-wrap: break-word; /* Asegura que el texto largo se divida si es necesario */
+    white-space: normal; 
+    text-align: center; /* Centra el texto dentro del tooltip */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra el texto en ambos ejes */
+}
