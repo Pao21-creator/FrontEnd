@@ -1,6 +1,6 @@
 /* Contenedor principal que maneja el layout de los mapas */
 .mapa-container {
-  margin-top: 100px; /* Espacio para la barra de navegación */
+  margin-top: 90px; /* Espacio para la barra de navegación */
   margin-left: 280px; /* Deja espacio para la barra lateral */
   width: calc(100% - 280px); /* Asegura que ocupe el espacio restante */
   height: calc(100vh - 70px); /* Ocupa todo el alto disponible (restando la altura del navbar) */
@@ -21,6 +21,19 @@
     flex: 1; /* Hace que cada mapa ocupe el mismo espacio */
     height: 45vh; /* Tamaño del mapa, ajustable a menos de la mitad de la pantalla */
     max-width: 48%; /* Asegura que cada mapa no ocupe más de la mitad de la pantalla */
+  }
+
+ .map-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #292828;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 8px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra suave para un toque moderno */
   }
 
   .info.legend {
