@@ -72,7 +72,7 @@ function Tabs({ fechas, valores, year }) {
         <div className={`tab-content ${activeTab === 1 ? "active" : ""}`}>
           <div className="tab-content-header">
             <h3>
-              Comparador interanual de cobertura nivel {year} vs{" "}
+              Comparador interanual de cobertura nival {year} vs{" "}
               {selectedYearGrafic}
             </h3>
 
