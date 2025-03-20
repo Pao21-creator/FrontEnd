@@ -39,7 +39,8 @@ function Sidebar() {
     { value: 2021 , label: '2021' },
     { value: 2022 , label: '2022' },
     { value: 2023 , label: '2023' },
-    { value: 2024 , label: '2024' }
+    { value: 2024 , label: '2024' },
+    { value: 2025 , label: '2025' },
   ];
 
   return (
@@ -48,7 +49,7 @@ function Sidebar() {
       <TextoDescriptivo 
         title="Estimación de Nieve"
         description="Esta plataforma permite visualizar la cobertura de nieve en las principales cuencas hídricas desde el año 2001 en adelante."
-        description2="La información utilizada en este estudio proviene de imágenes satelitales MODIS, específicamente del producto MOD10A2, el cual tiene una resolución espacial de 500 metros y proporciona datos cada 8 días. Estas imágenes fueron obtenidas del sitio web NSIDC."
+        description2="La información utilizada en este estudio proviene de imágenes satelitales MODIS, específicamente del producto MOD10A2, que tiene una resolución espacial de 500 metros y una frecuencia de adquisición cada 8 días. Este producto fue obtenido del sitio web de NSIDC (https://nsidc.org/)."
       />
 
       {/* Selector de cuenca */}
