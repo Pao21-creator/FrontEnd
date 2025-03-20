@@ -9,6 +9,9 @@ function Tabs({ fechas, valores, year }) {
   const [activeTab, setActiveTab] = useState(0); // Estado para manejar la pestaña activa
   const { selectedYearGrafic, handleYearGraficSelectChange, selectedCuenca } =
     useSelector();
+  
+  // Estado para editar el texto del tooltip
+  const [tooltipText, setTooltipText] = useState( "Compara la serie anual del año seleccionado, con el promedio histórico de cobertura nival entre los años 2001 y 2024. Los datos utilizados corresponden al promedio de cobertura de nieve por cuenca, obtenidos en intervalos de 8 días, lo que resulta en aproximadamente 45 datos por año.");
 
   const handleTabClick = (index) => {
     setActiveTab(index);
@@ -63,7 +66,16 @@ function Tabs({ fechas, valores, year }) {
       {/* Contenido de las pestañas */}
       <div className="tab-content-container">
         <div className={`tab-content ${activeTab === 0 ? "active" : ""}`}>
-          <h3>Serie de cobertura nival de la cuenca</h3>
+          <div className="header-with-tooltip">
+            <h3>
+              Serie de cobertura nival de la cuenca
+              <span className="info-icon">
+                <i className="fas fa-info-circle"></i>
+                {/* Tooltip personalizado */}
+                <span className="tooltip-text">{tooltipText}</span>
+              </span>
+            </h3>
+          </div>
           {/* Pasa las fechas y los valores a Grafico como props */}
           <div id="grafico">
             <Grafico fechas={fechas} valores={valores} year={year} />
@@ -78,7 +90,7 @@ function Tabs({ fechas, valores, year }) {
 
             <SelectorAnualGrafico
               options={yearOptions}
-              value= {selectedYearGrafic || 2023}
+              value={selectedYearGrafic || 2023}
               onSelectChange={handleYearGraficSelectChange}
             />
           </div>
@@ -99,4 +111,5 @@ function Tabs({ fechas, valores, year }) {
 }
 
 export default Tabs;
+
 
