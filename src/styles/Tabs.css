@@ -178,7 +178,7 @@
   line-height: 1.4; /* Establece una altura de línea para que el texto no esté muy pegado */
   white-space: normal; /* Permite que el texto se ajuste a varias líneas */
   word-wrap: break-word; /* Rompe las palabras largas si es necesario */
-  width: 250px; /* Define un ancho máximo para el tooltip */
+  width: 220px; /* Define un ancho máximo para el tooltip */
   opacity: 0;
   transition: opacity 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
   z-index: 9999; /* Asegura que esté por encima de otros elementos */
