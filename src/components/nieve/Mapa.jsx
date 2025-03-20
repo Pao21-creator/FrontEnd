@@ -18,13 +18,14 @@ function Mapa({ cuenca, year }) {
   const [center, setCenter] = useState([51.505, -0.09]);
   
   let cuencas = 'barrancasygrande';
+  let titulo = 'Río Colorado';
   const año = 2008;
 
   useEffect(() => {
     setLoading(true);
 
     axios
-      .post("https://backend-geosepa.onrender.com/getMapIdCuenca", {
+      .post("http://localhost:3000/getMapIdCuenca", {
         funcion : 'graficoAnual',
         cuenca : cuenca,
         año: year
@@ -67,6 +68,9 @@ function Mapa({ cuenca, year }) {
 
   return (
     <div className="mapa-container">
+      {/* Título dinámico que muestra el nombre de la cuenca */}
+      <h2 className="map-title">{cuenca ? `Cuenca del ${titulo}` : 'Cuenca no definida'}</h2>
+
       <div className="mapa-row">
         <div className="mapa">
           <MapContainer
