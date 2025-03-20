@@ -147,3 +147,48 @@
   font-family: Arial, sans-serif;  /* Fuente del texto */
 }
 
+
+/* Estilos generales */
+.header-with-tooltip {
+  position: relative;
+}
+
+/* Estilo para el contenedor del icono de información */
+.info-icon {
+  position: relative;
+  cursor: pointer; /* Cambia el cursor cuando pasa sobre el icono */
+  display: inline-block;
+  margin-left: 10px; /* Añadimos margen entre el título y el icono */
+  z-index: 10; /* Asegura que el icono de información esté por encima de otros elementos */
+}
+
+/* Estilo para el texto del tooltip */
+.tooltip-text {
+  visibility: hidden; /* El tooltip está oculto por defecto */
+  position: absolute;
+  top: 20px; /* Coloca el tooltip debajo del icono */
+  left: 50%; /* Centra el tooltip en relación al icono */
+  transform: translateX(-50%); /* Alinea el tooltip horizontalmente al centro */
+  background-color: rgba(49, 49, 49, 0.8); /* Fondo más suave con transparencia */
+  color: white; /* Texto blanco */
+  padding: 8px 12px; /* Relleno interno más suave */
+  border-radius: 12px; /* Bordes redondeados */
+  font-size: 0.8rem;
+  text-align: justify; /* Alinea el texto en el centro */
+  line-height: 1.4; /* Establece una altura de línea para que el texto no esté muy pegado */
+  white-space: normal; /* Permite que el texto se ajuste a varias líneas */
+  word-wrap: break-word; /* Rompe las palabras largas si es necesario */
+  width: 250px; /* Define un ancho máximo para el tooltip */
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+  z-index: 9999; /* Asegura que esté por encima de otros elementos */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra suave para resaltar */
+}
+
+/* Muestra el tooltip cuando el ratón pasa sobre el icono */
+.info-icon:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1; /* Hace que el tooltip sea visible */
+  transform: translateX(-50%); /* Alinea el tooltip al centro cuando está visible */
+}
+
