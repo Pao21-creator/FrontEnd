@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import '../../styles/nieve/Mapa.css';
-import '../../styles/nieve/LegendControl.css';
+import '../../styles/nieve/legendControl.css';
 
 function LegendControl({ year }) {
   const map = useMap(); // Usamos useMap para acceder al mapa de Leaflet
